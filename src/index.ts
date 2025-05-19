@@ -69,10 +69,8 @@ const getperfume = async(id: string) => {
             data: foundperfume ,
             message: "perfume succesfully recovered"
         }
-
-        }
-        
-    } catch (error) {
+        }   
+     catch (error) {
         
     }
 }
@@ -85,9 +83,9 @@ const updateperfume = async(Id: string) => {
     }
 }
 
-const deleteperfume = async(id: string) => {
+const deleteperfume = async(id: string, newdata : Partial<QuePerfume>) => {
     try {
-        
+        const updatedperfume = await Perfume.findByIdAndUpdate(id, newdata, {new: true})
     } catch (error) {
         
     }
