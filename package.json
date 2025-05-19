@@ -1,0 +1,27 @@
+{
+  "name": "entrega-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn ./src/index.ts" ,
+    "build": "tsc" ,
+    "start" : "tsc && node ./dist/index.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InesVizcaino09/tp-backend-vizcaino.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InesVizcaino09/tp-backend-vizcaino/issues"
+  },
+  "homepage": "https://github.com/InesVizcaino09/tp-backend-vizcaino#readme",
+  "description": "",
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
