@@ -58,8 +58,19 @@ const getperfumes = async() => {
     }
 }
 
-const getperfume = async() => {
+const getperfume = async(id: string) => {
     try {
+        const foundperfume = await Perfume.findById(id)
+        if (!foundperfume) {
+            return {success: false , message: "perfume not found"}
+        }
+        return {
+            success:true ,
+            data: foundperfume ,
+            message: "perfume succesfully recovered"
+        }
+
+        }
         
     } catch (error) {
         
