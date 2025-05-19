@@ -75,17 +75,34 @@ const getperfume = async(id: string) => {
     }
 }
 
-const updateperfume = async(Id: string) => {
+const updateperfume = async(id: string, newdata : Partial<QuePerfume>) => {
     try {
-        
-    } catch (error) {
+           const updatedperfume = await Perfume.findByIdAndUpdate(id, newdata, {new: true})
+        if (!updatedperfume)  return {success: false , messsage: "perfume not found"}
+        return{
+            success: true ,
+            data: updatedperfume, 
+            message: "perfume updated succesfully"
+        }    
+    } catch (error: any) {
+        return {
+            success: false ,
+            error: error.message
+        }
         
     }
 }
 
-const deleteperfume = async(id: string, newdata : Partial<QuePerfume>) => {
+const deleteperfume = async(id: string, ) => {
     try {
-        const updatedperfume = await Perfume.findByIdAndUpdate(id, newdata, {new: true})
+        const deletedperfume = await Perfume.findByIdAndDelete(id)
+        if (!deletedperfume) return {success: false, message: "film not found"}
+        return {
+            success: true ,
+            data: deletedperfume ,
+            message: "perfume succesfully deleted"
+        }
+ 
     } catch (error) {
         
     }
