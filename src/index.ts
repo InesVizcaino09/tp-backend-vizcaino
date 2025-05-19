@@ -19,9 +19,19 @@ const perfSchema = new Schema({
 })
 const Perfume = model("Perfume", perfSchema)
 
-const addnewperfume = async() => {
+interface QuePerfume {
+    title: string
+    brand: string
+    topnote: string
+}
+
+const addnewperfume = async(newperfume : QuePerfume) => {
     try {
-        
+      const { title , brand ,topnote} = newperfume ;
+      if (!title || !brand || !topnote) {
+        return {success : false , error: "invalid data"}
+      } 
+      const newfiletoDb = new Perfume ( { title , brand ,topnote})
     } catch (error) {
         
     }
