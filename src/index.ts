@@ -103,7 +103,11 @@ const deleteperfume = async(id: string, ) => {
             message: "perfume succesfully deleted"
         }
  
-    } catch (error) {
+    } catch (error: any) {
+        return {
+            success: false ,
+            error: error.message
+        }
         
     }
 }
