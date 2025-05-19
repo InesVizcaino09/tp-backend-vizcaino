@@ -19,8 +19,45 @@ const perfSchema = new Schema({
 })
 const Perfume = model("Perfume", perfSchema)
 
+const addnewperfume = async() => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
 
+const getperfumes = async() => {
+    try {
+    
+    } catch (error) {
+    
+    }
+}
 
+const getperfume = async() => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
+const updateperfume = async(Id: string) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
+const deleteperfume = async(id: string) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
 
 
 
