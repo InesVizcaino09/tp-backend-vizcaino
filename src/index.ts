@@ -32,15 +32,28 @@ const addnewperfume = async(newperfume : QuePerfume) => {
         return {success : false , error: "invalid data"}
       } 
       const newfiletoDb = new Perfume ( { title , brand ,topnote})
-    } catch (error) {
-        
+      await newfiletoDb.save()
+      return {
+        success: true ,
+        data: newfiletoDb ,
+        message: "New Perfume added succesfully"
+      }
+    } catch (error: any) {
+        return { success: false, error: error.message };
     }
 }
 
 const getperfumes = async() => {
     try {
+        const perfumes = await Perfume.find()
+        return {
+            success: true ,
+            data: perfumes ,
+            message: "perfumes succesfully recovered"
+        }
     
-    } catch (error) {
+    } catch (error: any) {
+        return {success: false , error: error.message}
     
     }
 }
